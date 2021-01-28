@@ -1,22 +1,22 @@
-package Sorting.InsertionSort;
+package sorting.InsertionSort;
 
 public class InsertionSort {
 	
-	/* [»ðÀÔ Á¤·Ä]
-	 * ±âÁØ ÀÎµ¦½ºÀÇ °ªÀ» ÀÌÀü ÀÎµ¦½ºÀÇ °ªµé°ú ºñ±³ÇÏ¿© ±âÁØ°ªÀÌ ´õ ÀÛÀ¸¸é ÀÌÀü°ªÀ» µÚ·Î ÇÑ Ä­¾¿ ¿Å±â°í ±× ÀÚ¸®¿¡ ±âÁØ°ªÀ» »ðÀÔÇÑ´Ù.
-	 * ¾ÕÀ¸·Î ÇÑ Ä­ ÀüÁøÇÑ ±âÁØ°ªÀ» ´Ù½Ã ±× ÀÌÀü°ªµé°ú ºñ±³ÇÏ¿© ±âÁØ°ªÀÌ ÀÛÀ¸¸é ÀÚ¸®¸¦ ¹Ù²Ù´Â °ÍÀ» ¹Ýº¹ÇÑ´Ù.
-	 * [½Ã°£º¹Àâµµ] ÃÖ¼±ÀÇ °æ¿ì : O(n) / ÃÖ¾ÇÀÇ °æ¿ì : O(n^2)
+	/* [ì‚½ìž… ì •ë ¬]
+	 * ê¸°ì¤€ ì¸ë±ìŠ¤ì˜ ê°’ì„ ì´ì „ ì¸ë±ìŠ¤ì˜ ê°’ë“¤ê³¼ ë¹„êµí•˜ì—¬ ê¸°ì¤€ê°’ì´ ë” ìž‘ìœ¼ë©´ ì´ì „ê°’ì„ ë’¤ë¡œ í•œ ì¹¸ì”© ì˜®ê¸°ê³  ê·¸ ìžë¦¬ì— ê¸°ì¤€ê°’ì„ ì‚½ìž…í•œë‹¤.
+	 * ì•žìœ¼ë¡œ í•œ ì¹¸ ì „ì§„í•œ ê¸°ì¤€ê°’ì„ ë‹¤ì‹œ ê·¸ ì´ì „ê°’ë“¤ê³¼ ë¹„êµí•˜ì—¬ ê¸°ì¤€ê°’ì´ ìž‘ìœ¼ë©´ ìžë¦¬ë¥¼ ë°”ê¾¸ëŠ” ê²ƒì„ ë°˜ë³µí•œë‹¤.
+	 * [ì‹œê°„ë³µìž¡ë„] ìµœì„ ì˜ ê²½ìš° : O(n) / ìµœì•…ì˜ ê²½ìš° : O(n^2)
 	 */
 	
 	static void insertionSort(int[] arr) {
 		int temp = 0;
         int j = 0;
-        int count = 1; // Ãâ·ÂÀ» À§ÇÑ º¯¼ö
+        int count = 1; // ì¶œë ¥ì„ ìœ„í•œ ë³€ìˆ˜
         
         for(int i = 1; i < arr.length; i++){
-            temp = arr[i]; // ±âÁØ°ª
+            temp = arr[i]; // ê¸°ì¤€ê°’
             for(j=i-1; j>=0 && temp<arr[j]; j--){
-            	// ±âÁØ°ªÀÌ ÀÛ´Ù¸é ÀÌÀü°ªº¸´Ù ÀÛ´Ù¸é ÀÌÀü°ªÀÇ À§Ä¡¸¦ ÇÑ Ä­ µÚ·Î ¹Ð¾î³½´Ù.
+            	// ê¸°ì¤€ê°’ì´ ìž‘ë‹¤ë©´ ì´ì „ê°’ë³´ë‹¤ ìž‘ë‹¤ë©´ ì´ì „ê°’ì˜ ìœ„ì¹˜ë¥¼ í•œ ì¹¸ ë’¤ë¡œ ë°€ì–´ë‚¸ë‹¤.
                 arr[j+1] = arr[j];
                 print(arr, count);
                 count++;
