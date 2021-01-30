@@ -1,4 +1,4 @@
-package sorting.BubbleSort;
+package sorting.bubbleSort;
 
 public class BubbleSort {
 	/*
